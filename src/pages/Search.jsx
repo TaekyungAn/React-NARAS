@@ -17,5 +17,5 @@ export default function Search() {
     setInitData();
   }, []);
 
-  return <div>Search{searchParams.get("q")}</div>;
+  return <div>Search {searchParams.get("q")}</div>;
 }
