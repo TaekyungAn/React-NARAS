@@ -1,15 +1,15 @@
 import { useEffect, useState } from "react";
-import { fetchCountires } from "../api";
+import { fetchCountries } from "../api";
 import CountryList from "../components/CountryList";
 import Searchbar from "../components/Searchbar";
 import style from "./Home.module.css";
 
 export default function Home() {
-  const [countires, setCountires] = useState([]);
+  const [countries, setCountries] = useState([]);
 
   const setInitData = async () => {
-    const data = await fetchCountires();
-    setCountires(data);
+    const data = await fetchCountries();
+    setCountries(data);
   };
 
   useEffect(() => {
@@ -19,7 +19,7 @@ export default function Home() {
   return (
     <div className={style.container}>
       <Searchbar />
-      <CountryList countires={countires} />
+      <CountryList countries={countries} />
     </div>
   );
 }

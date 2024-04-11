@@ -1,6 +1,6 @@
 import axios from "axios";
 
-export async function fetchCountires() {
+export async function fetchCountries() {
   try {
     const response = await axios.get("https://naras-api.vercel.app/all");
     return response.data;

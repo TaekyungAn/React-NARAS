@@ -1,6 +1,8 @@
 import { useEffect, useState } from "react";
 import { useSearchParams } from "react-router-dom";
 import { fetchSearchResults } from "../api";
+import Searchbar from "../components/Searchbar";
+import CountryList from "../components/CountryList";
 
 export default function Search() {
   // eslint-disable-next-line no-unused-vars
@@ -17,5 +19,10 @@ export default function Search() {
     setInitData();
   }, []);
 
-  return <div>Search {searchParams.get("q")}</div>;
+  return (
+    <div>
+      <Searchbar />
+      <CountryList countries={countries} />
+    </div>
+  );
 }
